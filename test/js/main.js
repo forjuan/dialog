@@ -1,0 +1,82 @@
+require.config({
+	paths:{
+		jquery:'jquery-2.1.1.min',
+		jqueryUI:'jquery-ui.min'
+	}
+});
+require(['jquery','dialog'],function($,dialog){
+	$('#btn-alert').click(function(){
+		var modal = new dialog.Modal().alert({
+			title:'提示',
+			content:'Welcome!!!',
+			width:300,
+			height:150,
+			y:250,
+			x:600,
+			hasCloseBtn:true,
+			text4AlertBtn:'OK',
+			dragHandle:'.modal-header',
+			skinClassName:'modal-skin-a',
+		}).on('alert',function(){
+			alert('你点击了确定按钮')
+		}).on('alert',function(){
+			alert('确定按钮第二次回调')
+		}).on('alert',function(){
+			alert('确定按钮第三次回调')
+		}).on('close',function(){
+			alert('第一次点击了关闭按钮')
+		}).on('close',function(){
+			alert('关闭按钮第二次回调')
+		});
+	});
+	$('#btn-confirm').click(function(){
+		var modal = new dialog.Modal().confirm({
+			title:'提示',
+			content:'你确定要上传该文件，上传后不可更改',
+			width:300,
+			height:150,
+			y:250,
+			x:600,
+			hasCloseBtn:true,
+			text4AlertBtn:'OK',
+			dragHandle:'.modal-header',
+			skinClassName:'modal-skin-a',
+		}).on('confirm',function(){
+			alert('你点击了是按钮')
+		}).on('confirm',function(){
+			alert('是按钮第二次回调')
+		}).on('cancel',function(){
+			alert('你点击了否按钮')
+		}).on('cancel',function(){
+			alert('否按钮点击第二次')
+		}).on('close',function(){
+			alert('第一次点击了关闭按钮')
+		});
+	});
+
+	$('#btn-prompt').click(function(){
+		var modal = new dialog.Modal().prompt({
+			title:'提示',
+			content:'请输入您要上传的内容',
+			width:300,
+			height:150,
+			y:250,
+			x:600,
+			hasCloseBtn:true,
+			text4AlertBtn:'OK',
+			dragHandle:'.modal-header',
+			skinClassName:'modal-skin-a',
+			text4CancelBtn: "取消"
+		}).on('prompt',function(data){
+			alert('你点击了输入按钮，输入内容是:'+ data )
+		}).on('prompt',function(){
+			alert('输入按钮第二次回调')
+		}).on('cancel',function(){
+			alert('你点击了取消按钮')
+		}).on('cancel',function(){
+			alert('取消按钮点击第二次')
+		}).on('close',function(){
+			alert('第一次点击了关闭按钮')
+		});
+	});
+});

@@ -1,0 +1,107 @@
+body {
+  font-family: Microsoft YaHei;
+}
+/*禁止背景滚动*/
+.modal-open {
+	overflow: hidden;
+}
+.modal {
+	position: fixed;
+	left: 300px;
+	top: 20px;
+	z-index: 999;
+	border: 1px solid lightblue;
+	width: 500px;
+	height: 400px;
+	background: #fff;
+}
+
+/*modal-header*/
+.modal-header {
+	height: 40px;
+	line-height: 40px;
+	background: pink;
+  text-align: center;
+}
+
+/*modal-body*/
+.modal-body {
+	padding:10px;
+}
+
+/*footer*/
+.modal-footer{
+	position: absolute;
+	bottom: 0px;
+	display: table;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: lightgray;
+	text-align: center;
+}
+.modal-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px;
+}
+
+/*mask*/
+.modal-mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.3;
+	z-index: 10;
+}
+
+/*alert*/
+.modal-alertBtn {
+	width: 100px;
+	height: 30px;
+	border-style: none;
+	border-radius: 4px;
+	background: blue;
+	color: #fff;
+	font-family: Microsoft Yahei;
+}
+
+/*confirm*/
+.modal-confirmBtn {
+	width: 60px;
+	height: 30px;
+	margin-right: 20px;
+	border-style: none;
+	border-radius: 4px;
+	background: blue;
+	color: #fff;
+	font-family: Microsoft Yahei;
+}
+.modal-cancelBtn {
+	width: 60px;
+	height: 30px;
+	border-style: none;
+	border-radius: 4px;
+	background: blue;
+	color: #fff;
+	font-family: Microsoft Yahei;
+}
+
+/*prompt*/
+.modal-promptBtn {
+	width: 60px;
+	height: 30px;
+	margin-right: 20px;
+	border-style: none;
+	border-radius: 4px;
+	background: blue;
+	color: #fff;
+	font-family: Microsoft Yahei;
+}
